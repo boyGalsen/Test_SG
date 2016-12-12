@@ -95,7 +95,7 @@ public class Jeu {
                     this.setEtatCourant(State.NORMAL);
                 }
                 break;
-//           
+//
         }
 
         //afficherScore();

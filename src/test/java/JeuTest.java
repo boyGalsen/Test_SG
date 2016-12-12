@@ -25,5 +25,15 @@ public class JeuTest {
         Assert.assertTrue(jeu.getEtatCourant()== Jeu.State.DEUCE);
     }
 
+    @Test
+    public void eatTieBreakTest(){
 
+        Joueur j1=  new Joueur("j1");
+        Joueur j2=  new Joueur("j2");
+        Jeu jeu= new Jeu(j1,j2);
+        j2.setJeu(5);
+        j1.setJeu(6);
+        j2.incrementSet();
+        Assert.assertTrue(jeu.getEtatCourant()== Jeu.State.TIE_BREAK);
+    }
 }
