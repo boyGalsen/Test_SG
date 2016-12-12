@@ -31,9 +31,11 @@ public class JeuTest {
         Joueur j1=  new Joueur("j1");
         Joueur j2=  new Joueur("j2");
         Jeu jeu= new Jeu(j1,j2);
-        j2.setJeu(5);
-        j1.setJeu(6);
-        j2.incrementSet();
+        j2.setSet(5);
+        j1.setSet(6);
+        j1.setJeu(30);
+        j2.setJeu(40);
+        jeu.joueur2MarqueContreJoueur1();
         Assert.assertTrue(jeu.getEtatCourant()== Jeu.State.TIE_BREAK);
     }
 }

@@ -95,7 +95,10 @@ public class Jeu {
                     this.setEtatCourant(State.NORMAL);
                 }
                 break;
-//
+            case TIE_BREAK:
+                j1.incrementTieBreak();
+                verifierScoreTieBreak(j1,j2);
+                break;
         }
 
         //afficherScore();
