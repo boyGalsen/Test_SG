@@ -60,6 +60,27 @@ public class Jeu {
             System.out.println(j1.getNom()+" a gagné la partie !");
         }
     }
+    public void afficherScore(){
+        switch (this.getEtatCourant()) {
+            case NORMAL:
+                System.out.println(joueur1.getNom()+" : Set("+joueur1.getSet()+") | Points("+joueur1.getJeu()+")");
+                System.out.println(joueur2.getNom()+" : Set("+joueur2.getSet()+") | Points("+joueur2.getJeu()+")");
+                break;
+            case DEUCE:
+                System.out.println("DEUCE");
+                break;
+            case AVANTAGE:
+                System.out.println(joueur1.getNom()+" : Set("+joueur1.getSet()+") | AVANTAGE("+joueur1.isAvantage()+")");
+                System.out.println(joueur2.getNom()+" : Set("+joueur2.getSet()+") | AVANTAGE("+joueur2.isAvantage()+")");
+
+                break;
+            case TIE_BREAK:
+                System.out.println("TIE BREAK ");
+                System.out.println(joueur1.getNom()+" : Points("+joueur1.getTieBreak()+")");
+                System.out.println(joueur2.getNom()+" : Points("+joueur2.getTieBreak()+")");
+                break;
+        }
+    }
     private void marquer(Joueur j1, Joueur j2) {
         switch (this.getEtatCourant()) {
             case NORMAL:
@@ -101,7 +122,7 @@ public class Jeu {
                 break;
         }
 
-        //afficherScore();
+        afficherScore();
     }
 
     public void joueur1MarqueContreJoueur2() {
@@ -126,5 +147,11 @@ public class Jeu {
             }
             entree = in.nextLine();
         }
+    }
+
+    public static void main(String [] args){
+        Jeu jeu = new Jeu();
+        jeu.jouer();
+
     }
 }
