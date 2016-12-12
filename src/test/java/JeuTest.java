@@ -11,4 +11,19 @@ public class JeuTest {
         Jeu j= new Jeu();
         Assert.assertTrue(j.getEtatCourant()== Jeu.State.NORMAL);
     }
+
+    @Test
+    public void eatDeuceTest(){
+
+       Joueur j1=  new Joueur("j1");
+        j1.setJeu(40);
+        Joueur j2=  new Joueur("j2");
+        j2.setJeu(30);
+        Jeu jeu= new Jeu(j1,j2);
+        jeu.joueur2MarqueContreJoueur1();
+
+        Assert.assertTrue(jeu.getEtatCourant()== Jeu.State.DEUCE);
+    }
+
+
 }

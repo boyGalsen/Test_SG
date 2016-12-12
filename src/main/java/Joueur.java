@@ -55,7 +55,9 @@ public class Joueur {
     public void setNom(String nom) {
         this.nom = nom;
     }
-
+    public void incrementTieBreak(){
+        this.setTieBreak(this.getTieBreak()+1);
+    }
     public void incrementSet(){
         this.setSet(this.getSet()+1);
         this.setAvantage(false);
