@@ -11,7 +11,9 @@ public class Jeu {
 
     public Jeu() {
         super();
-
+        this.joueur1 = new Joueur("Joueur 1");
+        this.joueur2 = new Joueur("Joueur 2");
+        this.etatCourant = State.NORMAL;
     }
 
     public Joueur getJoueur1() {
