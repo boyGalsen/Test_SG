@@ -64,7 +64,18 @@ public class Joueur {
     }
 
     public void incrementJeu(){
+        int i = this.getJeu();
 
+        switch(i) {
+            case 0:
+                this.setJeu(15);
+                break;
+            case 15:
+                this.setJeu(30);
+                break;
+            default:
+                break;
+        }
     }
 
 }

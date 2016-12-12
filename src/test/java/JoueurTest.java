@@ -19,5 +19,12 @@ public class JoueurTest   {
         j.incrementJeu();
         Assert.assertTrue(j.getJeu()==15);
     }
+    @Test
+    public void incrementJeuA40Test(){
+        Joueur j=new Joueur("J1");
+        j.setJeu(30);
+        j.incrementJeu();
+        Assert.assertTrue(j.getJeu()==40);
+    }
 
 }
