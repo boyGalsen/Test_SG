@@ -61,45 +61,42 @@ public class Jeu {
         }
     }
     private void marquer(Joueur j1, Joueur j2) {
-//        switch (this.getEtatCourant()) {
-//            case NORMAL:
-//                if (j1.getJeu() < 40) {
-//                    j1.incrementJeu();
-//
-//                    if(j1.getJeu() == 40 && j2.getJeu() == 40){
-//                        this.setEtatCourant(State.DEUCE);
-//                    }
-//                } else {
-//                    if (j2.getJeu() < 40) {
-//                        j1.incrementSet();
-//                        j2.setJeu(0);
-//                        verifierScoreNormal(j1,j2);
-//                    } /*else {
-//					this.setEtatCourant(State.DEUCE);
-//				}*/
-//                }
-//
-//                break;
-//            case DEUCE:
-//                j1.setAvantage(true);
-//                this.setEtatCourant(State.AVANTAGE);
-//                break;
-//            case AVANTAGE:
-//                if(j2.isAvantage()){
-//                    this.setEtatCourant(State.DEUCE);
-//                    j2.setAvantage(false);
-//                }else{
-//                    j1.incrementSet();
-//                    j2.setJeu(0);
-//                    verifierScoreNormal(j1,j2);
-//                    this.setEtatCourant(State.NORMAL);
-//                }
-//                break;
-//            case TIE_BREAK:
-//                j1.incrementTieBreak();
-//                verifierScoreTieBreak(j1,j2);
-//                break;
-//        }
+        switch (this.getEtatCourant()) {
+            case NORMAL:
+                if (j1.getJeu() < 40) {
+                    j1.incrementJeu();
+
+                    if(j1.getJeu() == 40 && j2.getJeu() == 40){
+                        this.setEtatCourant(State.DEUCE);
+                    }
+                } else {
+                    if (j2.getJeu() < 40) {
+                        j1.incrementSet();
+                        j2.setJeu(0);
+                        verifierScoreNormal(j1,j2);
+                    } /*else {
+					this.setEtatCourant(State.DEUCE);
+				}*/
+                }
+
+                break;
+            case DEUCE:
+                j1.setAvantage(true);
+                this.setEtatCourant(State.AVANTAGE);
+                break;
+            case AVANTAGE:
+                if(j2.isAvantage()){
+                    this.setEtatCourant(State.DEUCE);
+                    j2.setAvantage(false);
+                }else{
+                    j1.incrementSet();
+                    j2.setJeu(0);
+                    verifierScoreNormal(j1,j2);
+                    this.setEtatCourant(State.NORMAL);
+                }
+                break;
+//           
+        }
 
         //afficherScore();
     }
