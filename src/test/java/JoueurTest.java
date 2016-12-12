@@ -13,6 +13,11 @@ public class JoueurTest   {
         j.incrementSet();
         Assert.assertTrue(j.getSet()==1);
     }
-
+    @Test
+    public void incrementJeuTest(){
+        Joueur j=new Joueur("J1");
+        j.incrementJeu();
+        Assert.assertTrue(j.getJeu()==15);
+    }
 
 }

@@ -63,4 +63,8 @@ public class Joueur {
         this.setTieBreak(0);
     }
 
+    public void incrementJeu(){
+
+    }
+
 }
