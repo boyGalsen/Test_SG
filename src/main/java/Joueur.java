@@ -57,7 +57,10 @@ public class Joueur {
     }
 
     public void incrementSet(){
-      
+        this.setSet(this.getSet()+1);
+        this.setAvantage(false);
+        this.setJeu(0);
+        this.setTieBreak(0);
     }
 
 }
