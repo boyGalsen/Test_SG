@@ -1,5 +1,6 @@
 import json
 from collections import namedtuple
+from json import JSONEncoder
 
 
 def mapRoute(route,mappedLocation):
@@ -64,12 +65,12 @@ def customStudentDecoder(studentDict):
     return namedtuple('X', studentDict.keys())(*studentDict.values())
 
 
-def parse(apiResponseData):
+def parse(studentJsonData):
 
     #       Parse JSON into an object with attributes corresponding to dict keys.
-    #student = json.loads(apiResponseData, object_hook=customStudentDecoder)
+    #student = json.loads(studentJsonData, object_hook=customStudentDecoder)
     response = {}
-    student= json.loads(apiResponseData)
+    student= json.loads(studentJsonData)
     metadata=student['data']['metadata']
     locations=student['data']['locations']
     containers=student['data']['containers']
@@ -91,7 +92,7 @@ def parse(apiResponseData):
 
     #mappedRoute=dict(map(mapRoute,route,mappedLocation))
     response['isTranshipment']=len(mappedVessel.keys())>1
-    response['raw']={"jsonValue":apiResponseData}
+    response['raw']={"jsonValue":studentJsonData}
     #mapContaines=list(map(mapContainer,containers))
     response['containers'] = list(map(mapContainer,containers))
 
